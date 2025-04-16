@@ -22,5 +22,5 @@ const images = [
       // Fade in
       imageElement.classList.remove("fade-out");
     }, 1000);
-  }, 5000);
+  }, 3000);
   
