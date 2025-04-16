@@ -13,7 +13,8 @@
   <header>
     <div class="navbar">
       <div class="logo">PSP Barcode Galleria LLP</div>
-      <nav class="nav-links">
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+      <nav class="nav-links" id="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="products.html">Products</a>
@@ -55,5 +56,18 @@
   <footer>
     <p>© 2025 PSP Barcode Galleria LLP. All rights reserved.</p>
   </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+  
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+      });
+
+      // Ensure the menu is closed on page load (in case it was left open in the previous session)
+      navLinks.classList.remove("open");
+    });
+  </script>
 </body>
 </html>

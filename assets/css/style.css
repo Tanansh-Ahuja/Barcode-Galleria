@@ -20,47 +20,82 @@
     flex-direction: column;
   }
   
-  /* Navbar */
-  header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    padding: 1rem 0;
+header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  padding: 1rem 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 600;
+  white-space: nowrap;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+/* Menu toggle button - hidden on desktop */
+.menu-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
   }
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    flex-wrap: wrap;
-  }
-  .logo {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #333;
-    white-space: nowrap;
-  }
+
   .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    text-align: left;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+  }
+
+  .nav-links.open {
     display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
   }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #444;
-    font-weight: 600;
-    white-space: nowrap;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #007bff;
-  }
-  
+}
   /* Hero Section */
  
   .hero {
