@@ -1,0 +1,21 @@
+.about {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+  }
+  
+  .about h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .brand-list {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+  
+  .brand-list li {
+    margin-bottom: 0.5rem;
+  }
+  
