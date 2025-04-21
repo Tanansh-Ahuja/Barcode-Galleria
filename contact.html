@@ -4,24 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | PSP Barcode Galleria LLP</title>
+  <link rel="icon" type="image/x-icon" href="assets/Icon/LogoBW.ico">
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/contact.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="navbar">
-      <div class="logo">PSP Barcode Galleria LLP</div>
-      <button class="menu-toggle" id="menu-toggle">☰</button>
-      <nav class="nav-links" id="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="products.html">Products</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <!-- Navbar -->
+  <header id="navbar-container"></header>
 
   <main class="contact-container">
     <section class="contact-info">
@@ -57,17 +48,22 @@
     <p>© 2025 PSP Barcode Galleria LLP. All rights reserved.</p>
   </footer>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuToggle = document.getElementById("menu-toggle");
-      const navLinks = document.getElementById("nav-links");
-  
-      menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
-      });
-
-      // Ensure the menu is closed on page load (in case it was left open in the previous session)
-      navLinks.classList.remove("open");
-    });
-  </script>
+      // Inject the navbar
+      fetch("navbar.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("navbar-container").innerHTML = data;
+    
+          // 🚨 Now the navbar is in the DOM — attach the event listener
+          const menuToggle = document.getElementById("menu-toggle");
+          const navLinks = document.getElementById("nav-links");
+    
+          if (menuToggle && navLinks) {
+            menuToggle.addEventListener("click", () => {
+              navLinks.classList.toggle("open");
+            });
+          }
+        });
+    </script>
 </body>
 </html>
